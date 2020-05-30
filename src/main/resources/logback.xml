@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="false" scanPeriod="60 seconds" debug="false">
+    <property name="LOG_HOME" value="/home/icampus3.0/logs/" />   
+    <property name="appName" value="pbl-manager"></property>    
+    <contextName></contextName>
+    <appender name="fileLogAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">        
+        <file>/.log</file>     
+        <append>true</append>   
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">           
+            <fileNamePattern>/-%d{yyyy-MM-dd}-%i.log</fileNamePattern>            
+            <MaxHistory>90</MaxHistory>           
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>            
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [ %thread ] - [ %-5level ] [ %logger{50} : %line ] - %msg%n</pattern>
+        </layout>
+    </appender>     
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <!--
+        æ¥å¿è¾åºæ ¼å¼ï¼%dè¡¨ç¤ºæ¥ææ¶é´ï¼%threadè¡¨ç¤ºçº¿ç¨åï¼%-5levelï¼çº§å«ä»å·¦æ¾ç¤º5ä¸ªå­ç¬¦å®½åº¦
+        %logger{50} è¡¨ç¤ºloggeråå­æé¿50ä¸ªå­ç¬¦ï¼å¦åæç§å¥ç¹åå²ã %msgï¼æ¥å¿æ¶æ¯ï¼%næ¯æ¢è¡ç¬¦
+        -->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+        </layout>
+    </appender>
+    <root level="error">
+        <appender-ref ref="stdout" />
+        <appender-ref ref="fileLogAppender" />
+    </root>
+</configuration>

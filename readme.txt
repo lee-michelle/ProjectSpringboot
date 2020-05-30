@@ -1,0 +1,1 @@
+由HttpServletRequest的传值引发的线程安全性问题

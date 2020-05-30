@@ -1,0 +1,496 @@
+html,
+body,
+div, 
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dd,
+dl,
+dt,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+legend {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+img {
+    border: none;
+}
+p {
+    margin-bottom: 0;
+}
+body,
+a,
+input,
+select,
+button {
+    font-family: "Microsoft Yahei", "Droid Sans Fallback", "Arial", "Helvetica", "sans-serif", "宋体";
+    font-size: 14px;
+    outline: none;
+    color: #666;
+    text-decoration: none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);/*去除获取焦点时半透明背景*/
+
+}
+
+ul,ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: #428bca;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+table {
+    text-align: center;
+    vertical-align: middle;
+}
+
+th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.re(@width){
+    @xs : 100px/(1200px/@width);
+    @media (max-width:(@width + 2px)){
+        html{
+            font-size:@xs;
+        }
+    }
+}
+
+@media only screen and (min-width: 1441px) { html{ font-size: 120px; }}
+.re(1440px);
+.re(1280px);
+.re(1024px);
+.re(960px);
+.re(950px);
+.re(900px);
+.re(800px);
+.re(773px);
+.re(768px);
+.re(736px);
+.re(732px);
+.re(731px);
+.re(667px);
+.re(640px);
+.re(600px);
+.re(568px);
+.re(533px);
+.re(435px);
+.re(414px);
+.re(411px);
+.re(384px);
+.re(375px);
+.re(360px);
+.re(320px);
+
+// @media screen and (min-width:320px){html{font-size:12px;}}
+// @media screen and (min-width:346px){html{font-size:13px;}}
+// @media screen and (min-width:352px){html{font-size:14px;}}
+// @media screen and (min-width:400px){html{font-size:15px;}}
+// @media screen and (min-width:480px){html{font-size:18px;}}
+// @media screen and (min-width:560px){html{font-size:21px;}}
+// @media screen and (min-width:640px){html{font-size:24px;}}
+// @media screen and (min-width:720px){html{font-size:27px;}}
+// @media screen and (min-width:800px){html{font-size:30px;}}
+// @media screen and (min-width:1040px){html{font-size:39px;}}
+// @media screen and (min-width:1200px){html{font-size:45px;}}
+// @media screen and (min-width:1280px){html{font-size:48px;}}
+// @media screen and (min-width:1360px){html{font-size:51px;}}
+// @media screen and (min-width:1440px){html{font-size:54px;}}
+// @media screen and (min-width:1520px){html{font-size:57px;}}
+
+//@media only screen and (min-width: 1441px) { html{ font-size: 45px; }} 
+//@media only screen and (max-width: 1440px) { html{ font-size: 41px; }}
+//@media only screen and (max-width: 1200px) { html{ font-size: 39px; }}
+//@media only screen and (max-width: 1100px) { html{ font-size: 38px; }}
+//@media only screen and (max-width: 1000px) { html{ font-size: 37px; }}
+//@media only screen and (max-width: 900px) { html{ font-size: 36px; }}
+//@media only screen and (max-width: 800px) { html{ font-size: 35px; }}
+//@media only screen and (max-width: 700px) { html{ font-size: 34px; }}
+//@media only screen and (max-width: 600px) { html{ font-size: 33px; }}
+//@media only screen and (max-width: 500px) { html{ font-size: 32px; }}
+//@media only screen and (max-width: 400px) { html{ font-size: 31px; }}
+//@media only screen and (max-width: 300px) { html{ font-size: 30px; }}
+
+.text_no_select{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+//设置宽高
+.wh(@w,@h){
+    width:@w;
+    height: @h;
+}
+.wh_lh(@w,@h){
+    width:@w;
+    height: @h;
+    line-height: @h;
+}
+
+//定位的封装
+.Position_t_l(@styles,@argTp,@argLt){
+    position: @styles;
+    top: @argTp;
+    left: @argLt;
+}
+
+//定义margin值
+.mt(@i){
+    margin-top: @i;
+}
+.ml(@i){
+    margin-left: @i;
+}
+.mr(@i){
+    margin-right: @i;
+}
+.mb(@i){
+    margin-bottom: @i;
+}
+.mc(){
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//定义padding
+.pt(@i){
+    padding-top: @i;
+}
+.pb(@i){
+    padding-bottom: @i;
+}
+.pl(@i){
+    padding-left: @i;
+}
+.pr(@i){
+    padding-right: @i;
+}
+
+/*
+定义圆角
+@radius 圆角大小
+*/
+.round(@radius:5px){
+    border-radius:@radius;
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+}
+.round_tr_br(@radius:5px){
+    border-top-right-radius: @radius;
+    border-bottom-right-radius: @radius;
+    -webkit-border-top-right-radius: @radius;
+    -webkit-border-bottom-right-radius: @radius;
+    -moz-border-top-right-radius: @radius;
+    -moz-border-bottom-right-radius: @radius;
+}
+
+//定义三角形
+.ltne(@height,@color){//向左
+    border-right: @height solid @color;
+    border-top:@height solid transparent;
+    border-bottom:@height solid transparent;
+}
+.rtne(@height,@color){//向右
+    border-left: @height solid @color;
+    border-top:@height solid transparent;
+    border-bottom:@height solid transparent;
+}
+.ttne(@height,@color){//向上
+    border-bottom: @height solid @color;
+    border-left:@height solid transparent;
+    border-right:@height solid transparent;
+}
+.btne(@height,@color){//向下
+    border-top: @height solid @color;
+    border-left:@height solid transparent;
+    border-right:@height solid transparent;
+}
+
+
+//动画的函数
+//加前缀方法
+.pre(@style,@value){
+    -webkit-@{style}: @value;
+       -moz-@{style}: @value;
+        -ms-@{style}: @value;
+            @{style}: @value;
+}
+
+//animation方法
+.animation(@value){
+    .pre(animation,@value);
+}
+//用法
+//.animation(fadeIn 1s)
+
+
+//transition方法
+.transform(@Val){
+    .pre(transform,@Val);
+}
+//transform用法
+//.transform(rotate(0deg) skew(0.2));
+
+
+//transition方法
+.transition(@arg){
+    -webkit-transition:@args;
+    -o-transition:@args;
+    -ms-transition:@args;
+    -moz-transition:@args;
+    transition:@args;
+}
+
+
+//rotate方法
+.rotate(@ro :30deg){
+        transform: rotate(@ro);
+      -webkit-transform: rotate(@ro);
+      -moz-transform: rotate(@ro);
+      -o-transform: rotate(@ro);
+      filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+//rotate使用
+//.rotate50{
+//  .rotate(50deg);
+//}
+
+//通用方法
+.vendor(@property, @value, @value2) {  
+    -webkit-@{property}: @value, @value2;  
+     -khtml-@{property}: @value, @value2;  
+       -moz-@{property}: @value, @value2;  
+            @{property}: @value, @value2;  
+}
+
+
+// Box Shadows封装
+.box-shadow(@args) { /*向外*/
+    -webkit-box-shadow: @args;
+    box-shadow: @args;
+}
+
+.box-shadow-round{  
+  -webkit-box-shadow:0 0 10px rgba(0, 0, 0, .3);  
+  -moz-box-shadow:0 0 10px rgba(0, 0, 0, .3);  
+  box-shadow:0 0 10px rgba(0, 0, 0, .3);  
+}
+
+
+.box-sizing(@args:border-box){ /*box-sizing: content-box|border-box|inherit;*/
+    -webkit-box-sizing: @args;
+    -moz-box-sizing: @args;
+    box-sizing: @args;
+}
+
+.inner-shadow(@args) { /*向内*/
+    .box-shadow(inset @args);
+}
+
+// Opacity封装
+.opacity(@factor) {
+    @iefactor: @factor*100;
+    filter: ~"alpha(opacity=@{iefactor})";
+    opacity: @factor;
+}
+
+//自定义子元素均分
+.self_flex_content{ /*定义父元素*/
+    display:box;  /*（伸缩盒最老版本）*/
+    display:-webkit-box;  /* iOS 6-, Safari 3.1-6 */
+    display:-webkit-flex; /* Chrome */
+    display:-moz-box;     /* Firefox 19 */
+    display:-ms-flexbox;   
+    display:flex;  /*flex容器*/
+    
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row; 
+    flex-direction:row;
+    
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;    
+}
+.self_flex_item(@art:1){ /*定义子元素*/
+    -prefix-box-flex: @art; /* old spec webkit, moz */
+    -webkit-box-flex: @art;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -webkit-flex: @art;          /* Chrome */
+    -moz-box-flex: @art;         /* Firefox 19- */
+    -ms-flex: @art;              /* IE 10 */
+    flex: @art;                  /* NEW,  Opera 12.1, Firefox 20+ */
+}
+
+/*去掉input默认上下箭头*/
+.input_jiantou_hide{
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+  }
+  input[type="number"]{
+        -moz-appearance: textfield;
+  }
+  input {-webkit-appearance:none; /*去除input默认样式*/}
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"],
+  input{-webkit-appearance:none;}
+  input::-ms-clear {
+        display: none;
+  }
+}
+
+
+.select_jiantou_hide{
+    &::-ms-expand { display: none; }
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    -ms-appearance:none;
+} 
+
+//旋转360度不停
+.AnimationRotate360{
+    .animation(Rotating 1s linear infinite);
+}
+
+@keyframes Rotating{ 
+  from { .transform( rotateZ(0deg));} 
+  to {  .transform(rotateZ(360deg));} 
+} 
+@-webkit-keyframes Rotating{ 
+  from { .transform(rotateZ(0deg));} 
+  to {  .transform(rotateZ(360deg));}
+} 
+@-moz-keyframes Rotating{ 
+  from { .transform(rotateZ(0deg));} 
+  to {  .transform(rotateZ(360deg));}  
+} 
+@-o-keyframes Rotating{ 
+  from { .transform(rotateZ(0deg));} 
+  to {  .transform(rotateZ(360deg));}
+} 
+@-ms-keyframes Rotating{ 
+  from { .transform(rotateZ(0deg));} 
+  to {  .transform(rotateZ(360deg));}
+} 
+
+
+/*自定义滚动条样式(不兼容火狐ie)*/
+.scrollbar(@width:5px,@height:10px){
+    /*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+    ::-webkit-scrollbar{
+        width: @width;
+        height: @height;
+        background-color: rgba(255,255,255,0.5);;
+    }
+    /*定义滚动条的轨道，内阴影及圆角*/
+    ::-webkit-scrollbar-track{
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        border-radius: 2px;
+        background-color: #E0E5E5;
+    }
+    /*定义滑块，内阴影及圆角*/
+    ::-webkit-scrollbar-thumb{
+        /*width: 10px;*/
+        height: 0.5rem;
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #9CA8BB;
+    }
+}
+
+.small_hand{ cursor: pointer; }
+
+/*超出隐藏*/
+.widthHide(@width:100%){
+     overflow:hidden;text-overflow:ellipsis; -o-text-overflow:ellipsis;
+     white-space:nowrap;width:@width;
+}
+
+/*超出隐藏另外加宽*/
+.hideellipsis,.widthHide2{overflow:hidden;text-overflow:ellipsis; -o-text-overflow:ellipsis;
+     white-space:nowrap;}
+
+
+//定义背景图片
+.bg_all(@imgUrl,@x:0,@y:0,@w:100%,@h:100%){
+    background: url(@imgUrl) @x @y no-repeat;
+    background-size: @w @h;
+}
+
+/*隐藏滚动条的写法*/
+.box_overHide(@w1:100%,@w2:108%,@h:200px,@style:scroll){ overflow: hidden; width: @w1; height: @h;
+    .box_auto{ width: @w2; height: @h; overflow-x: hidden; overflow-y: @style;}
+}
+/*用法html结构*/
+//<div class="tree_box"><div class="box_auto"></div></div>
+//.tree_box(.box_overHide(@h:400px);)
+
+/*文本两端对齐多行省略*/
+.justify_align_ellipsis(@nums:5){
+    overflow: hidden; text-align: justify;
+    text-justify: inter-ideograph;/*IE*/
+    display: -webkit-box;
+    text-overflow: ellipsis;  
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: @nums;
+    
+}
+

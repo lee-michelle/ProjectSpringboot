@@ -1,0 +1,54 @@
+<!-- 学生-合作学习-列表 -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=yes" name="format-detection"/>
+        <meta content="email=yes" name="format-detection"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/custom/grouplearning/css/style.css}"/>
+        <link rel="stylesheet" th:href="@{/custom/grouplearning/css/main.css}"></link>
+        <script th:src="@{/comm/plugins/jQuery/jquery-3.0.0.js}"></script>
+        <script th:src="@{/comm/plugins/layer/layer.js}"></script>
+        <script th:src="@{/custom/grouplearning/js/selfcomm.js}"></script>
+        <script th:src="@{/comm/plugins/paging/page.js}"></script>
+    </head>
+    <body>               
+       <table class="listTable">
+           <tr>
+           <th width="20%" th:text="#{UI_00_00_001}">ID</th>
+           <th width="20%" th:text="#{UI_00_00_002}">用户名</th>
+           <th width="20%" th:text="#{UI_00_00_003}">密码</th>
+           <th width="40%" th:text="#{UI_00_00_004}">创建时间</th>                
+           <tr th:each="user:${list}">
+               <td th:text="${user.id}">ID</td>
+               <td ><span th:text="${user.username}">用户名</span></td>
+               <td th:text="${user.password}">密码</td>
+               <td th:if="${user.createTime} != null" th:text="${#dates.format(pblBaseInfoPO.startTime, 'yyyy-MM-dd')}">2018-08-11</td>
+           </tr>
+       </table>
+                          
+        
+        <script type="text/javascript" th:inline="javascript">
+        /*<![CDATA[*/
+         
+        function goAdd() {
+            document.location.href = [[@{preAdd}]];
+        }
+        
+        function goDetail(pblId) {
+            document.location.href = [[@{detail}]] + "/" + pblId;
+        }
+        
+        //查看图表信息
+        function goChart(pblId){
+            document.location.href = [[@{/chart/student/show}]] + "?pblId=" + pblId;
+        }
+        
+        /*]]>*/
+        </script>
+    </body>
+</html>

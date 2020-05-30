@@ -1,0 +1,40 @@
+.pop_error_tips {
+  overflow: hidden;
+  z-index: 100;
+}
+.pop_error_tips p {
+  /* background: #f0ad4e;*/ 
+ /*  border: 1px solid #c2cad8; */
+  padding: 0.3rem 0.7rem 0.3rem 1rem; 
+  box-sizing: border-box;
+  color: white;
+  font-size: 0.3rem;
+  overflow: visible;
+  position: relative;
+  text-align: center;
+}
+.pop_error_tips p i {
+  position: absolute;
+  display: inline-block;
+  font-size: 0.4rem;
+  color: white;
+}
+.pop_error_tips p .tipsIcon {
+  left: 0.1rem;
+  top: 45%;
+  width: 26px;
+  height: 26px;
+  margin-top: -0.35rem;
+  font-size: 0.7rem;
+  background: url(./safetytips_icon.png) no-repeat;
+  background-size: 100% 100%;
+}
+.pop_error_tips p .closeIcon {
+  top: 5px;
+  right: 5px;
+  width: 14px;
+  height: 14px;
+  background: url(./close_icon.png) no-repeat;
+  background-size: 100% 100%;
+}
+/*# sourceMappingURL=tips.css.map */

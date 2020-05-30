@@ -1,0 +1,117 @@
+.AnimationRotate360 {
+  -webkit-animation: Rotating 0.8s linear infinite;
+  -moz-animation: Rotating 0.8s linear infinite;
+  -ms-animation: Rotating 0.8s linear infinite;
+  animation: Rotating 0.8s linear infinite;
+}
+@keyframes Rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes Rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes Rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes Rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-ms-keyframes Rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.loading_wait {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0);
+}
+.loading_wait .loading_wait_content {
+  min-width: 10%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  padding: 0.25rem;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.loading_wait .loading_wait_content p {
+  font-size: 0.38rem;
+  color: white;
+  text-align: center;
+  height: 0.8rem;
+  line-height: 0.8rem;
+}
+.loading_wait .loading_wait_content p .loading_icon {
+  color: white;
+  border-radius: 50%;
+  width: 26px;
+  text-align: center;
+  height: 26px;
+  font-size: 0.6rem;
+  display: inline-block;
+  -webkit-animation: Rotating 0.8s linear infinite;
+  -moz-animation: Rotating 0.8s linear infinite;
+  -ms-animation: Rotating 0.8s linear infinite;
+  animation: Rotating 0.8s linear infinite;
+  background: url(loading_icon.png) no-repeat;
+  background-size: 100% 100%;
+}
+/*# sourceMappingURL=LoadingAnimation.css.map */
