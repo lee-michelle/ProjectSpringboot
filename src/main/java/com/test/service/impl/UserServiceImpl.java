@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
 	public void getRequestInfo(int orgCode) {
 		if (orgCode != this.httpServletRequest.hashCode()) {
 			System.out.println(
-					Thread.currentThread().getName() + ": " + orgCode + "  " + this.httpServletRequest.hashCode());
+					Thread.currentThread().getName() + ": " + orgCode + " " + this.httpServletRequest.hashCode());
 		}
 	}
 

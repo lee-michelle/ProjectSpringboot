@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
-@ComponentScan(basePackages = { "com.test.controller", "com.test.service" })
+@ComponentScan(basePackages = { "com.test.controller", "com.test.service", "com.test.re" })
 // @MapperScan(basePackages = { "com.test.dao" })
 public class ProjectSpringbootApplication {
 
