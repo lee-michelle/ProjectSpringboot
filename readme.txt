@@ -20,5 +20,7 @@
         --4.把分支的代码merge到主分支:git merge develop
         --5.git push推上去ok完成,现在 你自己分支的代码就合并到主分支上了 :git push
         
-        
+4.springboot集成mybatis注意事项：
+    --springboot的版本过高会导致项目启动失败
+    --mysql的版本过高，则需要修改Spring.datasource.url的值，需要加上GMT,driver-class-name的值为com.mysql.cj.jdbc.Driver        
         

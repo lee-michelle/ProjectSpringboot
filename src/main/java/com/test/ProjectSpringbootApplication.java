@@ -1,14 +1,16 @@
 package com.test;
 
-//import org.mybatis.spring.annotation.MapperScan;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
+@Configuration
 @ComponentScan(basePackages = { "com.test.controller", "com.test.service", "com.test.re" })
-// @MapperScan(basePackages = { "com.test.dao" })
+@MapperScan(basePackages = { "com.test.dao" })
 public class ProjectSpringbootApplication {
 
 	public static void main(String[] args) {

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.re.RedisBean;
-import com.test.service.UserService;
+import com.test.service.request.RequestService;
 
 @Controller
 @RequestMapping("/user")
@@ -23,14 +23,15 @@ public class TestController {
 
 	@Autowired
 	private RedisTemplate redisTemplate;
+
 	@Autowired
-	private UserService userService;
+	private RequestService requestService;
 
 	@ModelAttribute
 	public void init(HttpServletRequest request) {
 		// reuqest每个请求都不一样，只是在使用userService的set方法时，线程切换可能造成线程安全问题，userService是共享变量
-		userService.setRequest(request);
-		System.out.println(Thread.currentThread().getName() + ": " + userService.hashCode());
+		requestService.setRequest(request);
+		System.out.println(Thread.currentThread().getName() + ": " + requestService.hashCode());
 	}
 
 	/**
@@ -42,7 +43,7 @@ public class TestController {
 	@RequestMapping("/test")
 	@ResponseBody
 	public String test(HttpServletRequest request) {
-		userService.getRequestInfo(request.hashCode());
+		requestService.getRequestInfo(request.hashCode());
 		return "request 单利测试";
 
 	}
@@ -66,4 +67,5 @@ public class TestController {
 		redisTemplate.opsForList().rightPushAll("range", list);
 		return redisTemplate.opsForList().range("range", 0, 3);
 	}
+
 }

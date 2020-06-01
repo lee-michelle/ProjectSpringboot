@@ -5,6 +5,7 @@ public class User {
 	private Integer id;
 	private String username;
 	private String password;
+	private String sex;
 	private String createTime;
 
 	public Integer getId() {
@@ -37,6 +38,14 @@ public class User {
 
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 
 }
